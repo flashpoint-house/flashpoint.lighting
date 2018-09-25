@@ -2,4 +2,6 @@
 cd "$(dirname "$0")"
 
 yarn run build
-git subtree push --prefix dist origin gh-pages
+git add build
+git commit -m "Push site"
+git push origin `git subtree split --prefix build master`:gh-pages --force
